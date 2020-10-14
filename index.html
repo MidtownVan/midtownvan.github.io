@@ -33,8 +33,8 @@
             <a><img class="event" src="/img/four-full.png" alt="Oct 18th at 4pm - full"/></a>
             <a href="https://www.eventbrite.ca/e/122855015659"><img class="event" src="/img/six.png" onmouseover=this.src="/img/six-hov.png" onmouseout=this.src="/img/six.png" alt="Oct 18th at 6pm"/></a>
           </div>
-          <div class="newsletter"><a href="http://eepurl.com/hdjIDD" target="_blank">Sign up for Midtown news</a></div>
-
+          <div class="button"><a href="http://eepurl.com/hdjIDD" target="_blank">Sign up for Midtown news</a></div>
+          <div id="give-button" class="button yellow pointer"><a>Donate to Midtown</a></div>
           <a href="https://www.instagram.com/mtownchurch/" target="_blank"><img class="social" src="/img/insta.png" alt="instagram logo" /></a>
           <a href="https://www.facebook.com/mtownchurch" target="_blank"><img class="social" src="/img/fb.png" alt="facebook logo" /></a>
           <a href="https://twitter.com/mtownchurch" target="_blank"><img class="social" src="/img/tw.png" alt="twitter logo" /></a>
@@ -42,8 +42,27 @@
         </div>
       </div>
     </div>
+    <div class="modal-bg" id="modal">
+      <div class="modal-area">
+        <h3>How to Donate</h3>
+        <p>
+          <strong>E-transfer:</strong><br>Send e-transfers to donations@mtownchurch.ca.<br/><br/>
+          <strong>Cheque:</strong><br>Mail cheques to Midtown Church, 6060 Culloden Street, Vancouver BC, V5W 3S4.<br/>
+        </p>
+        <div id="modal-close" class="button pointer"><a>Ok</a></div>
+      </div>
+    </div>
   </body>
 </html>
 <script>
-  
+document.getElementById('give-button').onclick = function() {
+  document.getElementById('modal').classList.add('show');
+}
+document.getElementById('modal-close').onclick = function() {
+  console.log('class',document.getElementById('modal').classList);
+  document.getElementById('modal').classList.remove('show');
+}
+document.getElementById('modal').onclick = function() {
+  document.getElementById('modal').classList.remove('show');
+}
 </script>
